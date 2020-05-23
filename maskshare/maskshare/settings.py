@@ -75,8 +75,14 @@ WSGI_APPLICATION = 'maskshare.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'maskshare',
+        'USER': 'maskshareadmin',
+        'PASSWORD': 'M*1$k$h*r2e*dm!n3',
+        'HOST': 'mask-share-db.c5ynep7smxqd.us-east-2.rds.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
