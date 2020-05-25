@@ -2,7 +2,10 @@ from django.db import models
 
 # Create your models here.
 
-# This is a one-to-many relationship where there is one Giver that can have multiple masks.
+'''This is a one-to-many relationship where there is one Giver that can have multiple masks.
+All Masks that the Giver enters should be put in the Mask table. If a Mask is collected
+by a Needer, it can be deleted from the Mask table. If a Giver chooses to delete
+their profile, all of their masks will be deleted from the Mask table. '''
 
 
 class Giver(models.Model):
@@ -20,7 +23,6 @@ class Giver(models.Model):
 class Mask(models.Model):
     mask_giver = models.ForeignKey(Giver, on_delete=models.CASCADE)
     mask_type = models.CharField(max_length=20)
-    mask_status = models.BooleanField(default=False)
     time_of_entry = models.DateTimeField(auto_now=True)
 
     def __str__(self):
